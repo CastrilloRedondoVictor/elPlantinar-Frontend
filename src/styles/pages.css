@@ -1,0 +1,125 @@
+/* ==========================================================================
+   Páginas interiores: recursos, artículo, legales y 404
+   ========================================================================== */
+
+.page-hero {
+  padding-block: clamp(3rem, 2rem + 4vw, 5.5rem) clamp(2rem, 1.5rem + 2vw, 3rem);
+  border-bottom: 1px solid var(--line);
+}
+
+.page-hero__title {
+  font-size: var(--fs-h1);
+  font-weight: 380;
+  line-height: 1.06;
+  letter-spacing: -0.02em;
+}
+
+.page-hero__title--article {
+  font-size: clamp(2.1rem, 1.5rem + 2.6vw, 3.4rem);
+}
+
+.page-hero__lead {
+  max-width: 56ch;
+  margin-top: 1.5rem;
+  font-size: var(--fs-lg);
+  color: var(--muted);
+}
+
+.back-link {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 2rem;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.article__byline {
+  margin-top: 1.25rem;
+  font-size: var(--fs-sm);
+  color: var(--muted);
+}
+
+/* Texto largo */
+
+.prose {
+  padding-block: clamp(2.5rem, 2rem + 2vw, 4rem) clamp(3.5rem, 2.5rem + 3vw, 5.5rem);
+  font-size: 1.125rem;
+  line-height: 1.75;
+}
+
+.prose__lead {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  line-height: 1.5;
+  color: var(--forest);
+  margin-bottom: 2rem;
+}
+
+.prose h2 {
+  margin: 2.5rem 0 1rem;
+  font-size: 1.6rem;
+}
+
+.prose ul {
+  display: grid;
+  gap: 0.6rem;
+  margin: 0 0 1.5rem;
+  padding-left: 1.25rem;
+}
+
+.prose li::marker {
+  color: var(--terracotta);
+}
+
+.legal .prose {
+  font-size: 1.0625rem;
+}
+
+.legal .prose h2 {
+  font-size: 1.35rem;
+}
+
+.article__cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem 2rem;
+  margin-top: 3rem;
+  padding: 1.75rem 2rem;
+  border-radius: var(--radius-lg);
+  background: var(--sage-50);
+}
+
+.article__cta p {
+  flex: 1 1 280px;
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.article__related {
+  background: var(--paper);
+}
+
+.related-title {
+  margin-bottom: 1.75rem;
+  font-size: 1.75rem;
+}
+
+.not-found {
+  padding-block: clamp(4rem, 3rem + 6vw, 8rem);
+  text-align: center;
+}
+
+.not-found .container {
+  display: grid;
+  justify-items: center;
+  gap: 1rem;
+}
+
+.not-found .page-hero__lead {
+  margin: 0 0 1rem;
+}

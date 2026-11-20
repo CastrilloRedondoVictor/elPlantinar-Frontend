@@ -1,0 +1,286 @@
+/* ==========================================================================
+   Formulario de cita y avisos (SweetAlert2)
+   ========================================================================== */
+
+.form {
+  display: grid;
+  gap: 1.35rem;
+  padding: clamp(1.5rem, 1rem + 2.5vw, 2.75rem);
+  border-radius: var(--radius-lg);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-sm);
+}
+
+.form__head h3 {
+  font-size: clamp(1.5rem, 1.2rem + 1vw, 1.9rem);
+  margin-bottom: 0.5rem;
+}
+
+.form__head p {
+  color: var(--muted);
+  font-size: var(--fs-sm);
+}
+
+.form__row {
+  display: grid;
+  gap: 1.35rem;
+}
+
+.form__row--2 {
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 620px) {
+  .form__row--2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.field {
+  display: grid;
+  gap: 0.45rem;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.field__label {
+  padding: 0;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.field__optional {
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.field input[type='text'],
+.field input[type='email'],
+.field input[type='tel'],
+.field select,
+.field textarea {
+  width: 100%;
+  min-height: 50px;
+  padding: 0.75rem 1rem;
+  border: 1.5px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+  font-size: 1rem;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.field input:hover,
+.field select:hover,
+.field textarea:hover {
+  border-color: var(--leaf);
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--forest);
+  box-shadow: 0 0 0 4px rgba(79, 122, 92, 0.16);
+}
+
+.select {
+  position: relative;
+}
+
+.select select {
+  appearance: none;
+  padding-right: 2.75rem;
+  cursor: pointer;
+}
+
+.select::after {
+  content: '';
+  position: absolute;
+  right: 1.1rem;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  border-right: 1.75px solid var(--forest);
+  border-bottom: 1.75px solid var(--forest);
+  transform: translateY(-70%) rotate(45deg);
+  pointer-events: none;
+}
+
+.field__hint,
+.field__error {
+  margin: 0;
+  font-size: var(--fs-xs);
+  line-height: 1.45;
+}
+
+.field__hint {
+  color: var(--muted);
+}
+
+.field__error {
+  color: #a3412a;
+  font-weight: 600;
+}
+
+.field--error input,
+.field--error select,
+.field--error textarea {
+  border-color: #b4553a;
+  background: #fffaf7;
+}
+
+/* Opciones tipo píldora */
+
+.choice__options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.choice__pill {
+  position: relative;
+  cursor: pointer;
+}
+
+.choice__pill input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+
+.choice__pill span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0.55rem 1rem;
+  border: 1.5px solid var(--line-strong);
+  border-radius: 999px;
+  background: #fff;
+  font-size: var(--fs-sm);
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.choice__pill:hover span {
+  border-color: var(--leaf);
+}
+
+.choice__pill input:checked + span {
+  background: var(--forest);
+  border-color: var(--forest);
+  color: var(--paper);
+}
+
+.choice__pill input:focus-visible + span {
+  outline: 2px solid var(--terracotta);
+  outline-offset: 2px;
+}
+
+.field--error .choice__pill span {
+  border-color: #c98a75;
+}
+
+/* Casilla de privacidad */
+
+.checkbox__label {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  font-size: var(--fs-sm);
+  cursor: pointer;
+}
+
+.checkbox__label input {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin: 0.15rem 0 0;
+  accent-color: var(--forest);
+  cursor: pointer;
+}
+
+/* --- SweetAlert2 con la identidad de El Plantinar ----------------------- */
+
+.swal2-container.swal2-backdrop-show {
+  background: rgba(34, 56, 45, 0.45);
+}
+
+.ep-alert.swal2-popup {
+  width: min(92vw, 30rem);
+  padding: 2.25rem 2rem 2rem;
+  border-radius: var(--radius-lg);
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+}
+
+.ep-alert__title.swal2-title {
+  padding: 0.5rem 0 0;
+  font-family: var(--font-serif);
+  font-weight: 420;
+  font-size: 1.65rem;
+  line-height: 1.2;
+  color: var(--forest);
+}
+
+.ep-alert__text.swal2-html-container {
+  margin-top: 0.85rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.ep-alert__list {
+  display: inline-block;
+  margin: 0.5rem 0 0;
+  padding-left: 1.2rem;
+  text-align: left;
+  color: var(--ink);
+}
+
+.ep-alert__actions.swal2-actions {
+  gap: 0.5rem;
+  margin-top: 1.75rem;
+}
+
+.ep-alert .swal2-loader {
+  border-color: var(--forest) transparent var(--forest) transparent;
+}
+
+.ep-alert--in {
+  animation: ep-alert-in 0.35s var(--ease-out);
+}
+
+.ep-alert--out {
+  animation: ep-alert-out 0.2s ease forwards;
+}
+
+@keyframes ep-alert-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+}
+
+@keyframes ep-alert-out {
+  to {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+}
